@@ -6,6 +6,8 @@ public class HomeConstants {
     public static final String CHANGE_LANGUAGE_BUTTON_LOCATOR = "ACCESSIBILITY_ID:changeLanguageButtonHome";
     public static final String CAMERA_BUTTON_LOCATOR = "ACCESSIBILITY_ID:cameraButtonHome";
     public static final String PHONE_INPUT_LOCATOR = "ACCESSIBILITY_ID:phoneInputHome";
+    public static final String BTN_MAS = "id:floating_action_button";
+    public static final String VIEW_DISPLAYED = "id:toolbar_title";
 
     public static final String VIEW_NOT_DISPLAYED_MESSAGE = "Home page is not displayed.";
 }
