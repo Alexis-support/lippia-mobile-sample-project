@@ -2,12 +2,14 @@ package com.crowdar.examples.constants;
 
 public class HomeConstants {
 
-    public static final String SIGN_OUT_BUTTON_LOCATOR = "ACCESSIBILITY_ID:signOutButtonHome";
-    public static final String CHANGE_LANGUAGE_BUTTON_LOCATOR = "ACCESSIBILITY_ID:changeLanguageButtonHome";
-    public static final String CAMERA_BUTTON_LOCATOR = "ACCESSIBILITY_ID:cameraButtonHome";
-    public static final String PHONE_INPUT_LOCATOR = "ACCESSIBILITY_ID:phoneInputHome";
-    public static final String BTN_MAS = "id:floating_action_button";
-    public static final String VIEW_DISPLAYED = "id:toolbar_title";
+    public static final String ADD_TIME_BUTTON_LOCATOR = "ACCESSIBILITY_ID:Add time entry";
+    public static final String BUTTON_SAVE = "xpath://*[contains(@text,'SAVE')]";
+    public static final String INPUT_HOURS = "xpath://android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.NumberPicker[1]/android.widget.EditText";
+    public static final String HOURS_BUTTON = "xpath://android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.NumberPicker[1]/android.widget.Button[2]";
+    public static final String INPUT_MINUTES = "xpath:/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.NumberPicker[2]/android.widget.EditText";
+    public static final String MINUTES_BUTTON = "xpath:/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.NumberPicker[2]/android.widget.Button[2]";
+    public static final String PROJECT_BUTTON = "id:timeentry_project_section";
+    public static final String CROWDAR_PROJECT = "xpath://*[contains(@text, 'NewProjectAcademy2')]";
+    public static final String INPUT_DESCRIPTION = "id:time_entry_description_input";
 
-    public static final String VIEW_NOT_DISPLAYED_MESSAGE = "Home page is not displayed.";
 }
