@@ -20,12 +20,12 @@ Feature: Login
     Given El usuario esta logeado
     When hace click en el boton Add entry
     And setea las horas '<hours>' y los minutos '<minutes>'
+    And seleccciona el proyecto '<project>' en el Project Menu
     And setea la descripcion '<description>'
-    And seleccciona el proyecto the NewProjectAcademy2 en el Project Menu
     And clickea en el boton Save
-    Then se visualiza el proyecto creado en el dashboard de la aplicacion
+    Then se visualiza el proyecto creado en el dashboard de la aplicacion '<project>'
 
     Examples:
-      | hours | minutes | description     |
-      | 03    | 05      | Primer Proyecto |
+      | hours | minutes | description     | project            |
+      | 03    | 05      | Primer Proyecto | NewProjectAcademy2 |
 

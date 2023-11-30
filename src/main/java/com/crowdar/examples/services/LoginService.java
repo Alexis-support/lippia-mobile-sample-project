@@ -1,7 +1,5 @@
 package com.crowdar.examples.services;
 
-import com.crowdar.core.actions.MobileActionManager;
-import com.crowdar.driver.DriverManager;
 import com.crowdar.examples.constants.LoginConstants;
 import org.testng.Assert;
 
@@ -14,12 +12,10 @@ public class LoginService {
         setInput(LoginConstants.PASSWORD_INPUT_LOCATOR, password);
         click(LoginConstants.SIGN_IN_BUTTON_LOCATOR);
     }
-
     public static void isViewLoaded(){
         waitVisibility(LoginConstants.SIGN_UP_BUTTON_LOCATOR);
         Assert.assertTrue(isVisible(LoginConstants.EMAIL_INPUT_LOCATOR));
     }
-
     public static void setPassword(String password) {
         setInput(LoginConstants.PASSWORD_INPUT_LOCATOR, password);
     }

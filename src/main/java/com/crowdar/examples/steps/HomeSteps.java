@@ -2,6 +2,7 @@ package com.crowdar.examples.steps;
 
 import com.crowdar.core.PageSteps;
 import com.crowdar.core.PropertyManager;
+import com.crowdar.examples.services.AddEntryService;
 import com.crowdar.examples.services.HomeService;
 import com.crowdar.examples.services.LoginService;
 import cucumber.api.java.en.Then;
@@ -24,9 +25,9 @@ public class HomeSteps extends PageSteps {
     public void haceClickEnElBotonAddEntry(String btn) {
         HomeService.clickBotonAddTime(btn);
     }
-    @Then("se visualiza el proyecto creado en el dashboard de la aplicacion")
-    public void seVisualizaElProyectoCreadoEnElDashboardDeLaAplicacion() throws InterruptedException {
-        HomeService.proyectoCreado();
+    @Then("se visualiza el proyecto creado en el dashboard de la aplicacion '(.*)'")
+    public void seVisualizaElProyectoCreadoEnElDashboardDeLaAplicacion(String project) throws InterruptedException {
+        HomeService.projectCreated(project);
     }
     @And("^clickea en el boton (.*)$")
     public void clickeaEnElBotonSave(String btn) throws InterruptedException {
@@ -37,13 +38,34 @@ public class HomeSteps extends PageSteps {
         HomeService.entryHours(horas);
         HomeService.entryMinutes(min);
     }
-    @And("seleccciona el proyecto the NewProjectAcademy2 en el Project Menu")
-    public void selectTheCrowdarAcademyProjectOnTheProjectMenu() {
-        HomeService.selectProject();
-        HomeService.selectCrowdarProject();
+    @And("seleccciona el proyecto '(.*)' en el Project Menu")
+    public void selectTheCrowdarAcademyProjectOnTheProjectMenu(String project) {
+        HomeService.selectProject(project);
+
     }
     @And("^setea la descripcion '(.*)'$")
     public void setTheDescription(String description) {
-        HomeService.setDescription(description);
+        AddEntryService.setDescription(description);
     }
+
+    @When("el usuario cierra sesion")
+    public void theUserLogsOut() {
+        HomeService.logout();
+    }
+    @When("El usuario ingresa a la configuración y verifica el estado actual del modo oscuro")
+    public void theUserEntersInSettingsAndChecksTheCurrentDarkModeStatus() {
+        HomeService.enterInSettings();
+        HomeService.checkDarkModeInSettings();
+    }
+
+    @And("El usuario clickea 'Habilitar modo oscuro'")
+    public void theUserTapsOnTheEnableDarkModeToggle() {
+        HomeService.changeDarkModeStatus();
+    }
+
+    @io.cucumber.java.en.Then("El estado del modo oscuro ahora se ve en la pantalla inicial")
+    public void theDarkModeStatusIsNowTheOppositeOfTheInitialOne() {
+        HomeService.validateDarkModeStatus();
+    }
+
 }
